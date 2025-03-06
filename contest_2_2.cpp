@@ -17,6 +17,8 @@ int main() {
     std::string cost_str;
     std::getline(std::cin, cost_str);
 
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     std::vector<double> cost_vect;
     std::stringstream ss(cost_str);
     double day_cost;
@@ -55,7 +57,7 @@ int main() {
     std::ostringstream oss;
     oss << std::put_time(&result_date, "%d.%m.%Y");
 
-    std::string result_string = oss.str() + " " + std::to_string(days_grow);
+    std::string result_string = " " + oss.str() + " " + std::to_string(days_grow);
     std::cout << result_string << std::endl;
     return 0;
 }
